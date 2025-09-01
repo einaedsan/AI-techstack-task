@@ -1,0 +1,2 @@
+We implemented K-means clustering from scratch for color quantization. Each pixel is treated as a 3D vector in RGB space. Centroids are initialized randomly, pixels are assigned to nearest centroid, and centroids are updated iteratively until convergence.
+And normalized the images to [0,1] range, used fixed random seed for reproducibility, and allowed optional visualization per iteration to monitor convergence.

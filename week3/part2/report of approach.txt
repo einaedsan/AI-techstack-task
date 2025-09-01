@@ -1,0 +1,32 @@
+The images Baby, Diana, and Snowman were resized using the Seam Carving algorithm to reduce width.
+
+For each image, a specified number of columns (e.g., 200) were removed while preserving important content.
+
+Low-energy seams were found using Dynamic Programming and removed one by one.
+
+Seam visualization was enabled to observe the removal process step by step.(when you run the code)
+
+Energy Function:
+
+Base energy was computed using the image gradient (Sobel filter).
+
+When available, Depth Maps and Saliency Maps were added to the base energy to protect important areas:
+E
+Total
+=E
+gradient
+
++E
+depth
+
++E
+saliency
+	​
+
+Observations (Visual Quality):
+
+Key content such as faces or characters was preserved with minimal distortion.
+
+Less important regions were removed, resulting in balanced resized images.
+
+Using Depth and Saliency Maps prevented seams from passing through critical areas, improving visual quality.
