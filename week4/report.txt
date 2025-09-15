@@ -1,0 +1,25 @@
+
+HOG was used to extract edge and texture features from images. A Decision Tree was trained for classification using these features.
+
+Test Accuracy: 0.8618
+
+Dataset split:
+80% of the data was used for training and 20% for testing, with a stratified split to ensure that both classes 
+(cats and dogs) are balanced in each set.
+
+Improvements:
+
+Increasing the number of images or using data augmentation can improve accuracy.
+
+
+ Summary of learnings from HOG and Decision Tree
+
+HOG:
+
+Extracts local features such as edges and orientations.
+Works well on small grayscale images but is sensitive to background and pose variations.
+
+Decision Tree:
+
+Simple and interpretable, but can overfit when the dataset is small or features are complex.
+Setting depth limits and minimum samples per leaf helps improve performance.
