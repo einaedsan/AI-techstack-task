@@ -1,0 +1,69 @@
+Approach:
+
+Data Loading: Images were loaded from the dataset folder, converted to grayscale, and labeled as 0 for cats and 1 for dogs based on filenames.
+
+Feature Extraction: Histogram of Oriented Gradients (HOG) was used to extract edge and texture features from all images. Parameters used: orientations=9, pixels_per_cell=(8,8), cells_per_block=(2,2).
+
+Dataset Split: The dataset was split into 80% training and 20% testing using stratified sampling to maintain class balance.
+
+Model Training: Three classifiers were trained:
+
+Decision Tree (DT)
+
+Random Forest (RF)
+
+Linear Regression (LR) — adapted for binary classification using a threshold of 0.5.
+
+Evaluation: Models were evaluated with accuracy, confusion matrices, and learning curves. Sample predictions were visualized with original images and HOG representations.
+
+2. Test Accuracies
+Model	          
+Decision Tree Accuracy: 0.8130
+Random Forest Accuracy: 0.9350
+Linear Regression Accuracy: 0.9106
+
+
+
+3. Dataset Split Details
+
+Training set: 80% of data, with equal number of cats and dogs.
+
+Test set: 20% of data, maintaining the same class ratio.
+
+Example: If total dataset = 400 images → Training: 160 cats + 160 dogs, Test: 40 cats + 40 dogs.
+
+4. Confusion Matrix Interpretations
+
+Decision Tree: Some misclassifications of cats as dogs, but overall good.
+
+Random Forest: Best performance, fewer misclassifications due to ensemble averaging.
+
+Linear Regression: Slightly lower accuracy; thresholding works but can misclassify borderline predictions.
+
+Confusion matrices visually show which class is more often misclassified.
+
+5. Learning Curve Interpretations
+
+Decision Tree: Training accuracy is high, but cross-validation accuracy is lower → slight overfitting.
+
+Random Forest: Training and validation accuracy are closer → better generalization.
+
+Linear Regression: Training and validation accuracies increase with more data, but model is simpler → can’t capture complex patterns as well as tree-based models.
+
+Learning curves help us understand how adding more training data or tuning models could improve performance.
+
+6. Improvements & Additional Classifiers
+
+Data augmentation could help improve Linear Regression performance.
+
+Optional classifiers like SVM, KNN, or Logistic Regression could be added for comparison.
+
+Hyperparameter tuning for HOG or tree-based models may increase accuracy.
+
+7. Key Learnings
+
+Linear Regression: Can be adapted for binary classification using a threshold, but it’s not ideal for complex image data.
+
+Confusion Matrices: Show not just overall accuracy but also which classes are misclassified.
+
+Learning Curves: Reveal overfitting/underfitting and indicate if adding more data helps.
